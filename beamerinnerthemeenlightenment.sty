@@ -1,0 +1,17 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerinnerthemeenlightenment}[2016/01/29 v1.0 Unofficial Enlightenment Theme]
+
+\mode<presentation>
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+     \node[inner sep=0pt] at (0,0)
+     {\includegraphics[width=\the\paperwidth,height=\the\paperheight]{img/e_bg}};
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{title page}{
+   \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle
+}
+
+\mode<all>

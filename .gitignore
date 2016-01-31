@@ -10,3 +10,5 @@
 *.out
 *.snm
 *.toc
+
+/example.pdf
