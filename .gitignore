@@ -10,5 +10,7 @@
 *.out
 *.snm
 *.toc
+*.vrb
 
 /example.pdf
+/img/e_logo.pdf

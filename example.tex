@@ -1,10 +1,12 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lipsum}
 
-\title{There Is No Largest Prime Number}
-\date[ISPN ’80]{27th International Symposium of Prime Numbers}
-\author[Euclid]{Euclid of Alexandria \texttt{euclid@alexandria.edu}}
+\title[Short Title]{The Title}
+\subtitle{Presentation Subtitle}
+\date[\textbackslash{}today]{Date}
+\author[Jean Guyomarc'h]{Jean Guyomarc'h\\\texttt{jean.guyomarch@gmail.com}}
 
 \usetheme{enlightenment}
 
@@ -15,25 +17,61 @@
 \end{frame}
 
 
-\begin{frame} 
-\frametitle{There Is No Largest Prime Number} 
-\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
-\begin{theorem}
-There is no largest prime number. \end{theorem} 
-\begin{enumerate} 
-\item<1-| alert@1> Suppose $p$ were the largest prime number. 
-\item<2-> Let $q$ be the product of the first $p$ numbers. 
-\item<3-> Then $q+1$ is not divisible by any of them. 
-\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
-number not in the first $p$ numbers.
-\end{enumerate}
+\begin{frame}{Frame Title}{Frame Subtitle}
+   This slide contains itemizations and enumerations:
+   \begin{itemize}
+      \item look at this bullet!
+      \item Oh, another one!
+      \item That's magical, let's count to 3:
+         \begin{enumerate}
+            \item that's one;
+               \begin{itemize}
+                  \item one and a half;
+                  \item almost two;
+               \end{itemize}
+            \item that's two;
+            \item that's three;
+               \begin{enumerate}
+                  \item four?
+                  \item no...
+               \end{enumerate}
+         \end{enumerate}
+   \end{itemize}
 \end{frame}
 
-\begin{frame}{A longer title}
-\begin{itemize}
-\item one
-\item two
-\end{itemize}
+\begin{frame}{Lorem Ipsum}{dolor sit amet...}
+   \lipsum[1]
 \end{frame}
+
+
+\begin{frame}[fragile]{Verbatim}
+   \begin{verbatim}
+      This is verbatim with \LaTeX{} commands
+      that are well escaped and stuff...
+   \end{verbatim}
+\end{frame}
+
+\begin{frame}{How about maths?}{Entropy}
+   Let $H(X)$ be the entropy:
+   \[%
+      \boxed{%
+         H(X) = -\sum_{i=1}^{n}{P(x_i)\log_bP(x_i)}
+      }
+   \]
+   where:
+   \begin{itemize}
+      \item $X$ is a discrete random variable: $X=\{x_1, \cdots, x_n\}$;
+      \item $b \in \mathbb{N}^{*+}$ defines the entropy base ($b=2$ for Shannon's);
+      \item $P(X)$ is a probability mass function.
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Figures}
+   \begin{figure}[h!]\centering
+      \includegraphics[scale=0.5]{img/e_logo}
+      \caption{This is a figure}
+   \end{figure}
+\end{frame}
+
 
 \end{document}

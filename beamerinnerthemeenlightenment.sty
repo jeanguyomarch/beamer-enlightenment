@@ -1,17 +1,41 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerinnerthemeenlightenment}[2016/01/29 v1.0 Unofficial Enlightenment Theme]
 
+\RequirePackage{contour}
+\RequirePackage{tikz}
+
 \mode<presentation>
 
 \setbeamertemplate{background}{
   \begin{tikzpicture}
-     \node[inner sep=0pt] at (0,0)
-     {\includegraphics[width=\the\paperwidth,height=\the\paperheight]{img/e_bg}};
+     \node[inner sep=0pt] at (0,0)%
+     {
+        \includegraphics[width=\the\paperwidth,height=\the\paperheight]{img/e_bg}
+     };
+     \begin{pgfinterruptboundingbox}
+     \node[inner sep=0pt] at (0,5)%
+     {
+        \includegraphics[width=\the\paperwidth,height=\the\paperheight]{img/e_logo}
+     };
+     \end{pgfinterruptboundingbox}
   \end{tikzpicture}
 }
 
-\setbeamertemplate{title page}{
-   \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle
+\setbeamertemplate{title page}
+{
+   \begin{center}
+      {\usebeamerfont{title}\usebeamercolor[fg]{title}\textbf{\inserttitle}}
+      \ifx\insertsubtitle\@empty { %
+      } \else { %
+         \\[0.5cm] %
+         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle}
+      } \fi %
+      \\
+      \vspace*{1cm}
+      \insertauthor
+
+      {\tiny ~ \hfill \insertshortdate \hfill ~}
+   \end{center}
 }
 
 \mode<all>

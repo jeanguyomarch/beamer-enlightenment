@@ -1,10 +1,52 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamercolorthemeenlightenment}[2016/01/29 v1.0 Unofficial Enlightenment Theme]
 
+\RequirePackage{tikz}
+
 \mode<presentation>
 
+\definecolor{enlightenment}{RGB}{51,153,255}
+\definecolor{elightdark}{RGB}{136,136,136}
+
+
+\setbeamercolor*{title}{fg=enlightenment}
 \setbeamercolor*{title page header}{fg=white}
 \setbeamercolor*{author}{fg=white}
-\setbeamercolor*{date}{fg=white}
+\setbeamercolor*{normal text}{fg=white}
+
+\setbeamercolor{frametitle}{fg=enlightenment}
+\setbeamercolor{enumerate item}{fg=enlightenment}
+\setbeamercolor{enumerate subitem}{fg=enlightenment}
+\setbeamercolor{enumerate subsubitem}{fg=enlightenment}
+\setbeamercolor{section in head/foot}{fg=enlightenment}
+\setbeamercolor{author in head/foot}{fg=enlightenment}
+\setbeamercolor{date in head/foot}{fg=enlightenment}
+\setbeamercolor{structure}{fg=enlightenment}
+\setbeamercolor{footline}{fg=elightdark}
+%\setbeamercolor*{frametitle}{fg=enlightenment}
+%\setbeamercolor*{subsection}{fg=white}
+%\setbeamercolor*{subsubsection}{fg=white}
+
+% See http://tex.stackexchange.com/a/40855
+\newcommand\EnlightenmentBlur[1]{
+   \newcommand\xoffset{0.3}
+   \newcommand\yoffset{-0.2}
+   % Blur
+   \foreach \x in {-0.1,0.1} {
+      \foreach \y in {-0.1,0.1} {
+         \node[enlightenment!50!white] at (\xoffset em+\x em,\yoffset em+\y em) {
+            #1
+         };
+      }
+   }
+
+%   % Main Shadow
+%   \node[black!40!white] at (#1em+0.3em,#2em-0.2em) {
+%      #3
+%   };
+   \node[enlightenment] at (\xoffset em,\yoffset em) {
+      #1
+   };
+}
 
 \mode<all>

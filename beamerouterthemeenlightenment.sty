@@ -3,23 +3,37 @@
 
 \mode<presentation>
 
-% Frame title
-\defbeamertemplate*{frametitle}{enlightenment}
+\setbeamertemplate{itemize items}
 {
-\vskip1cm%
-  \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
-  \begin{tikzpicture}
-  \useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,1.2);
-  \fill[orange] (0,0) rectangle(2.95,1.2);
-  \fill[blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.2);
-   \ifx\insertframesubtitle\@empty%
-      {\node[anchor=west, white,font=\large] at (3.2,0.61){\insertframetitle};}
-      \else%
-      {\node[anchor= west, white,font=\large] at (3.2,0.81){\insertframetitle};%
-       \node[anchor= west, white,font=\small] at (3.2,0.41){\insertframesubtitle};}%
-      \fi
-  \end{tikzpicture}
+   \raisebox{-0.5mm}{%
+      \includegraphics[width=3mm,height=3mm]{img/e}
+   }
+}
+
+\setbeamertemplate{frametitle}
+{
+  \leavevmode%
+  \vspace{-5mm}
+  \begin{beamercolorbox}[wd=\paperwidth]{frametitle}
+     \begin{center}
+        \textbf{\insertframetitle} %
+        \ifx\insertframesubtitle\@empty { %
+        } \else { %
+           \\ %
+           {\small \textbf{\insertframesubtitle}}
+        } \fi %
+        \\[-2mm] %
+        \includegraphics[height=0.005\paperheight,width=\paperwidth]{img/bg_glint}
+     \end{center}
   \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}[text line]{%
+   %
+   \parbox{\linewidth}{
+      \vspace*{-8pt}%
+      {\textit{\insertshorttitle}\hfill\insertdate\hfill\insertshortauthor}
+   }
 }
 
 \mode<all>
