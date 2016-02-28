@@ -73,5 +73,24 @@
    \end{figure}
 \end{frame}
 
+\begin{frame}[fragile]{Code Listings}
+   \begin{lstlisting}
+#define BARE_METAL_IN_CASE_YOU_DID_NOT_NOTICE
+#include <stdio.h>
+
+static volatile unsigned char *PIN = (void *)(0x02020000);
+
+void // Yes, void!
+main(void)
+{
+   const int my = 42;
+
+   /* Directly access the hardware */
+   *PIN = my;
+   fprintf(stdout, "HW value is: %i\n", *PIN);
+}
+   \end{lstlisting}
+\end{frame}
+
 
 \end{document}

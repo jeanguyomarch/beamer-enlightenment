@@ -2,17 +2,19 @@
 \ProvidesPackage{beamercolorthemeenlightenment}[2016/01/29 v1.0 Unofficial Enlightenment Theme]
 
 \RequirePackage{tikz}
+\RequirePackage{listings}
 
 \mode<presentation>
 
 \definecolor{enlightenment}{RGB}{51,153,255}
 \definecolor{elightdark}{RGB}{136,136,136}
+\definecolor{elight}{RGB}{254,254,254}
 
 
 \setbeamercolor*{title}{fg=enlightenment}
-\setbeamercolor*{title page header}{fg=white}
-\setbeamercolor*{author}{fg=white}
-\setbeamercolor*{normal text}{fg=white}
+\setbeamercolor*{title page header}{fg=elight}
+\setbeamercolor*{author}{fg=elight}
+\setbeamercolor*{normal text}{fg=elight}
 
 \setbeamercolor{frametitle}{fg=enlightenment}
 \setbeamercolor{enumerate item}{fg=enlightenment}
@@ -23,30 +25,20 @@
 \setbeamercolor{date in head/foot}{fg=enlightenment}
 \setbeamercolor{structure}{fg=enlightenment}
 \setbeamercolor{footline}{fg=elightdark}
-%\setbeamercolor*{frametitle}{fg=enlightenment}
-%\setbeamercolor*{subsection}{fg=white}
-%\setbeamercolor*{subsubsection}{fg=white}
 
-% See http://tex.stackexchange.com/a/40855
-\newcommand\EnlightenmentBlur[1]{
-   \newcommand\xoffset{0.3}
-   \newcommand\yoffset{-0.2}
-   % Blur
-   \foreach \x in {-0.1,0.1} {
-      \foreach \y in {-0.1,0.1} {
-         \node[enlightenment!50!white] at (\xoffset em+\x em,\yoffset em+\y em) {
-            #1
-         };
-      }
-   }
+\definecolor{ekw}{RGB}{68,136,204}
+\definecolor{elitt}{RGB}{170,153,34}
+\definecolor{estr}{RGB}{255,136,119}
+\definecolor{ecpp}{RGB}{102,255,85}
+\definecolor{ecmt}{RGB}{51,85,187}
 
-%   % Main Shadow
-%   \node[black!40!white] at (#1em+0.3em,#2em-0.2em) {
-%      #3
-%   };
-   \node[enlightenment] at (\xoffset em,\yoffset em) {
-      #1
-   };
+\lstdefinestyle{enlightenment}{
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{ekw}\ttfamily,
+  stringstyle=\color{estr}\ttfamily,
+  commentstyle=\color{ecmt}\ttfamily,
+  identifierstyle=\color{elight},
+  morecomment=[l][\color{ecpp}]{\#},
 }
-
+\lstset{style=enlightenment}
 \mode<all>

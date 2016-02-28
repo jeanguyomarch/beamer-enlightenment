@@ -1,8 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerinnerthemeenlightenment}[2016/01/29 v1.0 Unofficial Enlightenment Theme]
 
-\RequirePackage{contour}
 \RequirePackage{tikz}
+\RequirePackage{listings}
 
 \mode<presentation>
 
@@ -36,6 +36,15 @@
 
       {\tiny ~ \hfill \insertshortdate \hfill ~}
    \end{center}
+}
+
+\lstset{
+   language=C,
+   captionpos=b,
+   showstringspaces=false,
+   belowcaptionskip=1\baselineskip,
+   breaklines=true,
+   xleftmargin=\parindent,
 }
 
 \mode<all>
