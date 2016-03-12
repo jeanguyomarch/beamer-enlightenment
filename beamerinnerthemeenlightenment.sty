@@ -70,4 +70,74 @@
    xleftmargin=\parindent,
 }
 
+\lstdefinelanguage{edje}
+{
+   morekeywords={
+      images, data, fonts, collections, group,
+      part, parts, dragable, description, sounds, sample,
+      text, font, fill, origin, size, image, proxy,
+      programs, program, styles, style,
+      gradient, spectra, spectrum,
+      color_classes, color_class, rel1, rel2,
+      items, item, file, params, externals,
+      map, rotation, perspective, script, lua_script,
+      set, sequence, link,
+      desc, rect, swallow, textblock, box, table, external, spacer,
+      item, name, alias, min, max, type, effect,
+      mouse_events, repeat_events, clip_to, no_render,
+      x, y, z, confine, events, base_scale, scale,
+      ignore_flags, precise_is_inside, select_mode,
+      use_alternate_font_metrics, entry_mode,
+      source, source2, source3, source4,
+      source5, source6, multiline, pointer_mode,
+      state, visible, step, aspect, fixed, middle,
+      aspect_preference, ellipsis, elipsis, image,
+      relative, offset, to, to_x, to_y,
+      source_visible, source_clip,
+      border, border_scale, border_scale_by, scale_hint, color, color2, color3, font, size,
+      signal, action, transition, in, filter,
+      target, after, fit, align,
+      text, smooth, inherit, tag, base, style,
+      text_source, color_class, text_class,
+      spectrum, angle, spread, normal, tween,
+      padding, prefer, weight, aspect_mode,
+      options, layout, position, span,
+      homogeneous,
+      on, perspective, light, perspective_on,
+      backface_cull, alpha, center, focus, zplane, focal,
+      int, double, string, external, script_only,
+      insert_before, insert_after,
+      script_recursion,
+      limit, broadcast_signal, targets, target_group, groups, size_range,
+      before, after, ignore, pointer, alt_font, clip
+      broadcast, nobroadcast, mouse, nomouse, repeat, norepeat,
+      precise, noprecise, noscale, vis, hid
+   },
+   morekeywords=[2]{
+      COMP, RAW, LOSSY, LOSSY_ETC1, LOSSY_ETC2, NONE, ON_HOLD, AUTOGRAB, NOGRAB,
+      TEXT, IMAGE, RECT, TEXTBLOCK, SWALLOW, GRADIENT, GROUP,
+      SPACER,
+      NONE, PLAIN, OUTLINE, SOFT_OUTLINE, SHADOW, PROXY,
+      SOFT_SHADOW, OUTLINE_SHADOW, OUTLINE_SOFT_SHADOW,
+      GLOW, FAR_SHADOW, FAR_SOFT_SHADOW,
+      BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT, LEFT,
+      TOP_LEFT, TOP, TOP_RIGHT, RIGHT,
+      STATE_SET, ACTION_STOP, SIGNAL_EMIT, FOCUS_SET,
+      DRAG_VAL_SET, DRAG_VAL_STEP, DRAG_VAL_PAGE,
+      LINEAR, SINUSOIDAL, ACCELERATE, DECELERATE,
+      LIN, DECEL, DIVIS, BOUNCE, SPRING, CURRENT,
+      ACCEL_FAC, DECEL_FAC, SIN_FAC, DIVISOR_INTERP,
+      ACCELERATE_FACTOR, DECELERATE_FACTOR,
+      VERTICAL, HORIZONTAL, BOTH, BOX, TABLE, SOURCE,
+      EDITABLE, PASSWORD,
+      DEFAULT, EXPLICIT, PLAY_SAMPLE,
+      SOLID,
+      WIDTH, HEIGHT
+   }
+   sensitive=true,
+   morecomment=[l]{//},
+   morecomment=[s]{/*}{*/},
+   morestring=[b]"
+}
+
 \mode<all>
