@@ -124,6 +124,7 @@ main(void)
             text { "default";
                desc { "default";
                   text.text: "Hello, World";
+                  /* comment */
                }
             }
          }
@@ -132,5 +133,25 @@ main(void)
    \end{lstlisting}
 \end{frame}
 
+\begin{frame}[fragile]{Eo Code Listings}
+   \begin{lstlisting}[language=eo]
+   class My (Elm.Win)
+   {
+      eo_prefix: my_obj;
+      legacy_prefix: my;
+
+      methods {
+         @property prop {
+            get {
+               [[ Doc ]]
+            }
+            values {
+               val: int;
+            }
+         }
+      }
+   }
+   \end{lstlisting}
+\end{frame}
 
 \end{document}

@@ -140,4 +140,34 @@
    morestring=[b]"
 }
 
+\lstdefinelanguage{eo}
+{
+   morekeywords={
+      false, true, null,
+      byte, ubyte, char, short, ushort, int, uint, long,
+      ulong, llong, ullong, int8, uint8, int16, uint16,
+      int32, uint32, int64, uint64, int128, uint128, size,
+      ssize, intptr, uintptr, ptrdiff, time, float, double,
+      ldouble, bool, void,
+      class, abstract, interface, mixin,
+      struct, enum, var, type, import,
+      legacy_prefix, eo_prefix, data,
+      properties, methods, events, constructors, implements,
+      set, get, keys, values, params,
+      const, own, free,
+      constructor, destructor, finalize, virtual, legacy,
+      return
+   },
+   morekeywords={
+      @property, @in, @out, @inout, @const, @class,
+      @free, @constructor, @extern, @beta, @protected,
+      @optional, @nullable,@warn_unused, @private, @hot
+   }
+   sensitive=true,
+   morecomment=[l]{//},
+   morecomment=[s]{/*}{*/},
+   morecomment=[s]{[[}{]]},
+   morestring=[b]"
+}
+
 \mode<all>
