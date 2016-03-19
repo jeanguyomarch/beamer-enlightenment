@@ -21,7 +21,7 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 
 
-SOURCES := example.tex
+SOURCES := demo.tex
 IMG_DIR := img
 
 SVG_FILES := $(IMG_DIR)/theme/e_logo.svg
