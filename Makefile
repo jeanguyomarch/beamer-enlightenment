@@ -23,25 +23,56 @@
 
 SOURCES := demo.tex
 IMG_DIR := img
+PREFIX := $(HOME)
+TEXMF := $(PREFIX)/texmf
+LATEX_DIR := tex/latex/beamerenlightenment
+PACKAGE := beamerenligthenment
+PACKAGE_DIR := _package
+ARCHIVE := $(PACKAGE).zip
 
-SVG_FILES := $(IMG_DIR)/theme/e_logo.svg
-PDF_FILES := $(patsubst %.svg,%.pdf,$(SVG_FILES))
+INSTALL_FILES := \
+$(LATEX_DIR)/beamercolorthemeenlightenment.sty \
+$(LATEX_DIR)/beamerinnerthemeenlightenment.sty \
+$(LATEX_DIR)/beamerouterthemeenlightenment.sty \
+$(LATEX_DIR)/beamerthemeenlightenment.sty \
+$(LATEX_DIR)/e.png \
+$(LATEX_DIR)/e_bg.png \
+$(LATEX_DIR)/bg_glint.png \
+$(LATEX_DIR)/e_logo.pdf
 
 gen-file-get = $(patsubst %.tex,%.$(1),$(SOURCES))
 
-.PHONY: all pdf clean
+.PHONY: all pdf clean package install uninstall
 
 all: pdf
 
-pdf: $(PDF_FILES)
-	latexmk -pdf $(SOURCES)
+$(LATEX_DIR)/e_logo.pdf: $(IMG_DIR)/e_logo.svg
+	rsvg-convert -f pdf -o $@ $<
+
+pdf: $(LATEX_DIR)/e_logo.pdf
+	TEXMFHOME=.:$$TEXMFHOME latexmk -pdf $(SOURCES)
 
 clean:
 	latexmk -C
 	$(RM) $(call gen-file-get,nav)
 	$(RM) $(call gen-file-get,vrb)
 	$(RM) $(call gen-file-get,snm)
-	$(RM) $(PDF_FILES)
+	$(RM) $(ARCHIVE)
 
-$(IMG_DIR)/%.pdf: $(IMG_DIR)/%.svg Makefile
-	rsvg-convert -f pdf -o $@ $<
+package: $(LATEX_DIR)/e_logo.pdf
+	@$(RM) -r $(PACKAGE_DIR)
+	@$(RM) $(ARCHIVE)
+	@mkdir $(PACKAGE_DIR)
+	@mkdir -p $(PACKAGE_DIR)/tex/latex/$(PACKAGE)
+	@mkdir -p $(PACKAGE_DIR)/doc/latex/$(PACKAGE)
+	@mkdir -p $(PACKAGE_DIR)/source/latex/$(PACKAGE)
+	@$(foreach inst,$(INSTALL_FILES),cp $(inst) $(PACKAGE_DIR)/tex/latex/$(PACKAGE);)
+	@cd $(PACKAGE_DIR) && zip -T -9 -r $(ARCHIVE) doc/ source/ tex/
+	@mv $(PACKAGE_DIR)/$(ARCHIVE) $(ARCHIVE)
+	@$(RM) -r $(PACKAGE_DIR)
+
+install: package
+	@unzip -o $(ARCHIVE) -d $(TEXMF)
+
+uninstall:
+	find $(TEXMF) -name $(PACKAGE) -type d -print | xargs $(RM) -vr
