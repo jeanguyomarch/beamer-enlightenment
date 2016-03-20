@@ -75,4 +75,4 @@ install: package
 	@unzip -o $(ARCHIVE) -d $(TEXMF)
 
 uninstall:
-	find $(TEXMF) -name $(PACKAGE) -type d -print | xargs $(RM) -vr
+	@find $(TEXMF) -name $(PACKAGE) -type d -print | xargs $(RM) -vr
