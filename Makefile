@@ -42,12 +42,12 @@ $(LATEX_DIR)/e_logo.pdf
 
 gen-file-get = $(patsubst %.tex,%.$(1),$(SOURCES))
 
-.PHONY: all pdf clean package install uninstall
+.PHONY: all pdf clean package install uninstall logo
 
 all: pdf
 
-$(LATEX_DIR)/e_logo.pdf: $(IMG_DIR)/e_logo.svg
-	rsvg-convert -f pdf -o $@ $<
+logo: $(IMG_DIR)/e_logo.svg
+	rsvg-convert -f pdf -o $(LATEX_DIR)/e_logo.pdf $<
 
 pdf: $(LATEX_DIR)/e_logo.pdf
 	TEXMFHOME=.:$$TEXMFHOME latexmk -pdf $(SOURCES)

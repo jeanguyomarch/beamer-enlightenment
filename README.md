@@ -8,7 +8,6 @@ Pre-requisites
 
 - `make`;
 - `latexmk`;
-- `rsvg-convert`;
 - a LaTeX distribution (e.g. texlive).
 
 
