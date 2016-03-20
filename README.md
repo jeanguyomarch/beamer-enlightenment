@@ -41,7 +41,12 @@ Use this enlightenment theme in your Beamer presentation:
 \begin{document}
 % ...
 \end{document}
+```
 
+If you need syntax highlighting as well as Edje and Eo support:
+
+```latex
+\usepackage{listingsenlightenment}
 ```
 
 Please refer to `demo.tex` for a real usecase. Run `make` to compile the

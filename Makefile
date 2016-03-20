@@ -35,6 +35,7 @@ $(LATEX_DIR)/beamercolorthemeenlightenment.sty \
 $(LATEX_DIR)/beamerinnerthemeenlightenment.sty \
 $(LATEX_DIR)/beamerouterthemeenlightenment.sty \
 $(LATEX_DIR)/beamerthemeenlightenment.sty \
+$(LATEX_DIR)/listingsenlightenment.sty \
 $(LATEX_DIR)/e.png \
 $(LATEX_DIR)/e_bg.png \
 $(LATEX_DIR)/bg_glint.png \

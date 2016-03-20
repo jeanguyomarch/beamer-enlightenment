@@ -26,6 +26,7 @@
 
 \RequirePackage{tikz}
 \RequirePackage{listings}
+\RequirePackage{listingsenlightenment}
 
 \mode<presentation>
 
@@ -49,19 +50,4 @@
 \setbeamercolor{structure}{fg=enlightenment}
 \setbeamercolor{footline}{fg=elightdark}
 
-\definecolor{ekw}{RGB}{68,136,204}
-\definecolor{elitt}{RGB}{170,153,34}
-\definecolor{estr}{RGB}{255,136,119}
-\definecolor{ecpp}{RGB}{102,255,85}
-\definecolor{ecmt}{RGB}{51,85,187}
-
-\lstdefinestyle{enlightenment}{
-  basicstyle=\footnotesize\ttfamily,
-  keywordstyle=\color{ekw}\ttfamily,
-  stringstyle=\color{estr}\ttfamily,
-  commentstyle=\color{ecmt}\ttfamily,
-  identifierstyle=\color{elight},
-  morecomment=[l][\color{ecpp}]{\#},
-}
-\lstset{style=enlightenment}
 \mode<all>

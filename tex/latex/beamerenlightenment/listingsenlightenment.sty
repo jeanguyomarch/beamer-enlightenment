@@ -1,0 +1,152 @@
+% The MIT License (MIT)
+%
+% Copyright © 2016 Jean Guyomarc'h
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the “Software”), to
+% deal in the Software without restriction, including without limitation the
+% rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+% sell copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in
+% all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+% THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+% OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+% ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+% OTHER DEALINGS IN THE SOFTWARE.
+
+
+\definecolor{enlightenment}{RGB}{51,153,255}
+\definecolor{elightdark}{RGB}{136,136,136}
+\definecolor{elight}{RGB}{254,254,254}
+
+\definecolor{ekw}{RGB}{68,136,204}
+\definecolor{elitt}{RGB}{170,153,34}
+\definecolor{estr}{RGB}{255,136,119}
+\definecolor{ecpp}{RGB}{102,255,85}
+\definecolor{ecmt}{RGB}{51,85,187}
+
+\lstdefinestyle{enlightenment}{
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{ekw}\ttfamily,
+  stringstyle=\color{estr}\ttfamily,
+  commentstyle=\color{ecmt}\ttfamily,
+  identifierstyle=\color{elight},
+  morecomment=[l][\color{ecpp}]{\#},
+}
+
+\lstset{
+   language=C,
+   captionpos=b,
+   showstringspaces=false,
+   belowcaptionskip=1\baselineskip,
+   breaklines=true,
+   xleftmargin=\parindent,
+}
+
+\lstdefinelanguage{edje}
+{
+   morekeywords={
+      images, data, fonts, collections, group,
+      part, parts, dragable, description, sounds, sample,
+      text, font, fill, origin, size, image, proxy,
+      programs, program, styles, style,
+      gradient, spectra, spectrum,
+      color_classes, color_class, rel1, rel2,
+      items, item, file, params, externals,
+      map, rotation, perspective, script, lua_script,
+      set, sequence, link,
+      desc, rect, swallow, textblock, box, table, external, spacer,
+      item, name, alias, min, max, type, effect,
+      mouse_events, repeat_events, clip_to, no_render,
+      x, y, z, confine, events, base_scale, scale,
+      ignore_flags, precise_is_inside, select_mode,
+      use_alternate_font_metrics, entry_mode,
+      source, source2, source3, source4,
+      source5, source6, multiline, pointer_mode,
+      state, visible, step, aspect, fixed, middle,
+      aspect_preference, ellipsis, elipsis, image,
+      relative, offset, to, to_x, to_y,
+      source_visible, source_clip,
+      border, border_scale, border_scale_by, scale_hint, color, color2, color3, font, size,
+      signal, action, transition, in, filter,
+      target, after, fit, align,
+      text, smooth, inherit, tag, base, style,
+      text_source, color_class, text_class,
+      spectrum, angle, spread, normal, tween,
+      padding, prefer, weight, aspect_mode,
+      options, layout, position, span,
+      homogeneous,
+      on, perspective, light, perspective_on,
+      backface_cull, alpha, center, focus, zplane, focal,
+      int, double, string, external, script_only,
+      insert_before, insert_after,
+      script_recursion,
+      limit, broadcast_signal, targets, target_group, groups, size_range,
+      before, after, ignore, pointer, alt_font, clip
+      broadcast, nobroadcast, mouse, nomouse, repeat, norepeat,
+      precise, noprecise, noscale, vis, hid
+   },
+   morekeywords=[2]{
+      COMP, RAW, LOSSY, LOSSY_ETC1, LOSSY_ETC2, NONE, ON_HOLD, AUTOGRAB, NOGRAB,
+      TEXT, IMAGE, RECT, TEXTBLOCK, SWALLOW, GRADIENT, GROUP,
+      SPACER,
+      NONE, PLAIN, OUTLINE, SOFT_OUTLINE, SHADOW, PROXY,
+      SOFT_SHADOW, OUTLINE_SHADOW, OUTLINE_SOFT_SHADOW,
+      GLOW, FAR_SHADOW, FAR_SOFT_SHADOW,
+      BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT, LEFT,
+      TOP_LEFT, TOP, TOP_RIGHT, RIGHT,
+      STATE_SET, ACTION_STOP, SIGNAL_EMIT, FOCUS_SET,
+      DRAG_VAL_SET, DRAG_VAL_STEP, DRAG_VAL_PAGE,
+      LINEAR, SINUSOIDAL, ACCELERATE, DECELERATE,
+      LIN, DECEL, DIVIS, BOUNCE, SPRING, CURRENT,
+      ACCEL_FAC, DECEL_FAC, SIN_FAC, DIVISOR_INTERP,
+      ACCELERATE_FACTOR, DECELERATE_FACTOR,
+      VERTICAL, HORIZONTAL, BOTH, BOX, TABLE, SOURCE,
+      EDITABLE, PASSWORD,
+      DEFAULT, EXPLICIT, PLAY_SAMPLE,
+      SOLID,
+      WIDTH, HEIGHT
+   }
+   sensitive=true,
+   morecomment=[l]{//},
+   morecomment=[s]{/*}{*/},
+   morestring=[b]"
+}
+
+\lstdefinelanguage{eo}
+{
+   morekeywords={
+      false, true, null,
+      byte, ubyte, char, short, ushort, int, uint, long,
+      ulong, llong, ullong, int8, uint8, int16, uint16,
+      int32, uint32, int64, uint64, int128, uint128, size,
+      ssize, intptr, uintptr, ptrdiff, time, float, double,
+      ldouble, bool, void,
+      class, abstract, interface, mixin,
+      struct, enum, var, type, import,
+      legacy_prefix, eo_prefix, data,
+      properties, methods, events, constructors, implements,
+      set, get, keys, values, params,
+      const, own, free,
+      constructor, destructor, finalize, virtual, legacy,
+      return
+   },
+   morekeywords={
+      @property, @in, @out, @inout, @const, @class,
+      @free, @constructor, @extern, @beta, @protected,
+      @optional, @nullable,@warn_unused, @private, @hot
+   }
+   sensitive=true,
+   morecomment=[l]{//},
+   morecomment=[s]{/*}{*/},
+   morecomment=[s]{[[}{]]},
+   morestring=[b]"
+}
+
+\lstset{style=enlightenment}
